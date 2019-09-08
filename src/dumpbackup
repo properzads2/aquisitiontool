@@ -1,0 +1,153 @@
+// let capitalreserve = parseInt(this.state.choice.reserve)  + parseInt(this.state.choice.capital)
+                // let longtermliabilites = parseInt(this.state.choice.loanbalance) + parseInt(this.state.choice.debentures) + parseInt(this.state.choice.otherloans)
+                // let currentliabilities = parseInt(this.state.choice.overdraft) + parseInt(this.state.choice.provisions) + parseInt(this.state.choice.creditors) + parseInt(this.state.choice.expensespayable) + parseInt(this.state.choice.customeradvance)
+                // let fixedassests = parseInt(this.state.choice.land) + parseInt(this.state.choice.plant)
+                // let noncurrentassests = parseInt(this.state.choice.investment)
+                // let intangibleassests = parseInt(this.state.choice.goodwill) + parseInt(this.state.choice.preliminaryexpenses)
+                // let currentassests = parseInt(this.state.choice.prepaidexpense) + parseInt(this.state.choice.debtors) + parseInt(this.state.choice.cash) + parseInt(this.state.choice.stock) + parseInt(this.state.choice.suppliersadvance)
+                // let quickassests = parseInt(this.state.choice.debtors) + parseInt(this.state.choice.cash) + parseInt(this.state.choice.suppliersadvance)        
+                // let totalassests = (fixedassests + noncurrentassests + intangibleassests + currentassests)
+                // let tangiblenetworth = (totalassests - (longtermliabilites + currentliabilities + intangibleassests) )
+                
+                // let currentratio = (currentassests / currentliabilities).toFixed(2)
+                // let quickratio = (quickassests / currentliabilities).toFixed(2)
+                // let debtequityratio = (longtermliabilites / tangiblenetworth).toFixed(2)
+                // let totaloutsideliabilityratio = ((longtermliabilites+ currentliabilities) / tangiblenetworth).toFixed(1)
+                // let stockturnoverratio = (this.state.choice.sales / this.state.choice.stock).toFixed(1)
+                // let debtorsturnoverratio = (this.state.choice.sales / this.state.choice.debtors).toFixed(1) 
+                
+                
+                // let debtorcollectionratio = ((this.state.choice.debtors / this.state.choice.sales)*12).toFixed(2)
+                // let netprofitsalesratio = (this.state.choice.netprofit / this.state.choice.sales) * 100
+                // let returnonequity = ((this.state.choice.netprofit/tangiblenetworth) * 100).toFixed(0)
+                // let returnoninvestment = ((this.state.choice.netprofit/(tangiblenetworth+longtermliabilites))* 100).toFixed(0)  
+
+                // const data = [
+                //   {
+                //     "name": "CurrentRatio",
+                //     "uv": currentratio,
+                    
+                    
+                //   },
+                  
+                //   {
+                //     "name": "Quick Ratio",
+                //     "uv": quickratio,
+                    
+                //   },
+                  
+                //   {
+                //     "name": "Debt equity Ratio",
+                //     "uv": debtequityratio,
+                    
+                //   },
+                  
+                //   {
+                //     "name": "Total O/S Liabilities",
+                //     "uv": totaloutsideliabilityratio,
+                //   },
+
+                //   {
+                //     "name": " Stock turnover Ratio",
+                //     "uv": stockturnoverratio,
+                //   },
+
+
+
+                // ]
+                 
+                
+     
+
+
+                return (
+                  <Finance company={this.handlecompany} contact={this.handlecontact} status = {this.handlestatus} close = {this.handleclose} choice= {this.state.choice}> </Finance>
+
+                // <React.Fragment>
+                // <div class="modal-overlay" id="modal-overlay"></div>
+                // <div class="modal" id="modal">
+                //     <button class="company-button" id="Companyinformation" onClick={this.handlecompany}>CompanyInformation</button>
+                //     <button class="contact-button" id="Contacts" onClick={this.handlecontact}>Contact</button>
+                //     <button class="status-button" id="status" onClick={this.handlestatus}>Status</button>
+                //     <button class="close-button" id="close-button" onClick={this.handleclose}>X</button>
+                //     <h1>Financial&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; </h1>
+                //     <div class="modal-guts">
+                //       <h2 align="center" style={{align:"center",color:"blue"}}>Financial Performance Analysis</h2> 
+                //        <br></br> 
+                //       <h2 align="center" style={{align:"center"}}>Summarized Balance Sheet</h2>
+                //       <br></br> 
+                //         <p>
+                //           <table class="a">
+                //             <tr>
+
+                //               <th colSpan="2">Liabilities</th>
+                //               <th colSpan="7" rowSpan="1" position="absolute" left="100px">Assests</th>
+                //             </tr>
+                //              <tr>
+                //                  <td>Capital Reserves</td>
+                //                   <td>{capitalreserve}</td>
+                //                   <td>Fixed assests</td>
+                //                   <td>{fixedassests}</td>
+                //                </tr>
+                //                   <td>LongtermLiabilities</td>
+                //                   <td>{longtermliabilites}</td>
+                //                   <td>IntangibleAssests</td>
+                //                   <td>{intangibleassests}</td>
+                                  
+                    
+                //                <tr>
+                //                   <td>CurrentLiabilities</td>
+                //                   <td>{currentliabilities}</td>
+                //                   <td>CurrentAssests + Non CurrentAssests</td>
+                //                   <td>{currentassests + noncurrentassests}</td>
+                //                 </tr>
+                    
+                //              <tr>
+                //                 <td style={{color: 'green', fontWeight:'bold'}}>Total Liabilities</td>
+                //                 <td>{(capitalreserve + longtermliabilites + currentliabilities) }</td>
+                //                 <td style={{color: 'red', fontWeight:'bold'}}>Total Assests</td>
+                //                 <td>{currentassests + noncurrentassests + fixedassests + intangibleassests}</td>
+                //                 </tr>                
+
+                //             </table>
+                //           </p>
+
+                //               <p>this is Finance information  capital reserve is {capitalreserve} = longtermliabilites => {longtermliabilites} = currentliabilities =>{currentliabilities}</p>
+                //               <p>this are assests .fixed assests => {fixedassests}  == noncurrentassests=>{noncurrentassests} == intangibleassests=>{intangibleassests} ==currentassests=>{currentassests} ====> quickassets =>{quickassests} </p>  
+                //               <p>Total Assests =>{totalassests} ----- Tangiblenetworth =>{tangiblenetworth}</p>
+                //               <p>Current Ratio => {currentratio}:1 ---- QuickRatio => {quickratio}:1-----------debtequityratio=>{debtequityratio}:1 -------- totaloutsideliabilityratio ==> {totaloutsideliabilityratio}:1</p>
+                //               <p>Stock Turnover ratio => {stockturnoverratio} times ------------- Debtorsturnoverratio ---> {debtorsturnoverratio} times == debtorcollectionratio ==> {debtorcollectionratio} months </p>
+                //               <p>netprofitto sales ratio ==> {netprofitsalesratio}% ==== returnonequityration ----> {returnonequity}% ===== returnoninvestment ---->{returnoninvestment}%</p>
+
+                //               <BarChart
+                //                   width={890}
+                //                   height={250}
+                //                   data={data}
+                //                   margin={{ top: 15, right: 30, left: 20, bottom: 5 }}>
+                                
+                //                   <CartesianGrid strokeDasharray="3 3" />
+                //                   <XAxis style={{color: 'red', fontWeight:'bold'}} dataKey="name">
+                //                     <Label style={{color: 'red', fontWeight:'bold'}} value="Financial Ratios" offset={0} position="insideBottom" />
+                //                   </XAxis>
+                //                   <YAxis label={{ value: 'Ratio Scale', angle: -90, position: 'insideLeft', textAnchor: 'middle' }} />
+                //                   <Bar dataKey="pv" fill="#8884d8">
+                //                     <LabelList dataKey="name" position="insideTop" angle="45"  />
+                //                   </Bar>
+                //                   <Bar dataKey="uv" fill="#82ca9d">
+                //                     <LabelList dataKey="uv" position="top" />
+                //                   </Bar>
+                //                </BarChart>
+                //                 <br></br>
+                //                Ratio Analysis Result
+                //                   <ol>
+                //                   <li>{(currentratio   > 1) ? <p style={{color: 'green', fontWeight:'bold'}}>Since the {this.state.choice.name} has current ratio {currentratio } which is more than 1 that it shows it can easily make curret debt payments and has good short term liquidity. </p> : <p style={{color: 'red', fontWeight:'bold'}}> {this.state.choice.name} has currentratio {currentratio} less than 1 which indicates the company may have problems meeting its short-term obligations , the company may also have problems with inventory management, ineffective or lax standards for collecting receivables, or an excessive cash burn rate.</p>}</li>
+                //                   <li>{(quickratio > 1) ? <p style={{color:'green', fontWeight:'bold'}}> jjj </p> :<p style={{color:'red', fontWeight:'bold'}}>jjjj</p>}</li>
+                //                   <li>{(debtequityratio > 1) ? <p style={{color:'green', fontWeight:'bold'}}> jjj </p> :<p style={{color:'red', fontWeight:'bold'}}>jjjj</p>}</li>
+                //                   <li>{(totaloutsideliabilityratio > 1) ? <p style={{color:'green', fontWeight:'bold'}}> jjj </p> :<p style={{color:'red', fontWeight:'bold'}}>jjjj</p>}</li>
+                //                   <li>{(quickratio > 1) ? <p style={{color:'green', fontWeight:'bold'}}> jjj </p> :<p style={{color:'red', fontWeight:'bold'}}>jjjj</p>}</li>
+                //                   </ol>
+                
+                //     </div>
+                //   </div>
+                // </React.Fragment>
+                )}       

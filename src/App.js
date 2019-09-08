@@ -1,24 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MainContainer from './MainContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <div className = "wrapper">
+                
+                <div align="center" style={{border: '4px solid red',borderRadius: '4', borderWidth: 0.5, fontSize:59, fontWeight:'bold', color:'Green' }} >
+                   Aquisition Management Tool
+                </div>
+
+      <MainContainer></MainContainer>
     </div>
   );
 }
