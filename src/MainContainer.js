@@ -217,7 +217,7 @@ class MainContainer extends Component{
       }
       
        // component did mount loads demo data everytime app refresh
-      componentDidMount=()=>{
+        componentDidMount=()=>{
         let loader = []; 
          let object = {
       
@@ -398,52 +398,58 @@ class MainContainer extends Component{
     render(){
          if (this.state.modalopen == 1){
            return (
-          <Company contact={this.handlecontact} finance={this.handlefinance} status = {this.handlestatus} close = {this.handleclose} choice= {this.state.choice}> </Company>
-
+            
+              
+            <Company contact={this.handlecontact} finance={this.handlefinance} status = {this.handlestatus} close = {this.handleclose} choice= {this.state.choice}> </Company>
+            
+            
         
         )}
         
             if (this.state.modalopen == 2){
              return (
-
+              
               <Contact company={this.handlecompany} finance={this.handlefinance} status = {this.handlestatus} close = {this.handleclose} choice= {this.state.choice} handleimagechange={this.handlecontactimage} post={this.handleComment}> </Contact>
-
+              
             
             )}
             if (this.state.modalopen == 3){
              return (
-                  
+              
                 <Finance company={this.handlecompany} contact={this.handlecontact} status = {this.handlestatus} close = {this.handleclose} choice= {this.state.choice}> </Finance>
-
+              
                 
               )
             }       
           
             if (this.state.modalopen == 4){
               return (
-
+               
               <Status company={this.handlecompany} contact={this.handlecontact} finance = {this.handlefinance} close = {this.handleclose} choice= {this.state.choice} statusupdate={this.handleStatusUpdate}> </Status>
-
+              
               )
              }
             
             if (this.state.add == true){
               return(
-                <AddContainer Addclick={this.handleAdd} Addsubmit={this.handleSubmit}></AddContainer>
+                
 
+                <AddContainer Addclick={this.handleAdd} Addsubmit={this.handleSubmit} database={this.state.data}> </AddContainer>
+                
                 )
                } 
             if (this.state.edit == true){
              return(
+               
                  <EditContainer EditExit={this.handleEditExit} savethis={this.editfinal} company={this.state.choice} ></EditContainer>
-
+                
               )
              }   
        
        
           return(
             <React.Fragment>
-
+                
                    <br></br><br></br>
                   <div className  = "mainbody" style={{fontWeight:"bold", color: 'black',fontSize:34}}>
                          
@@ -459,11 +465,12 @@ class MainContainer extends Component{
                 <img className="maineditposition2" src="http://www.sclance.com/pngs/pencil-png-clipart/./pencil_png_clipart_1001619.png" width="50" alt="Edit" onClick={()=>this.handleEdit(company)}></img></div>)}
                          
 
-               
+                
+                
 
                 <div><button className="positionaddbutton btn blue" onClick={this.handleAdd}>Add New Company</button></div>
-
-
+                
+                
              </React.Fragment>
             
             

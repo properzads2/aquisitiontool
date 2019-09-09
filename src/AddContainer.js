@@ -2,42 +2,105 @@ import React, { Component } from 'react';
 
 class AddContainer extends Component{
 constructor(){
-super()
+  super() 
+    this.state = {
+
+     nameError: "",
+
+    } 
+
 
 
 }
+    validate = () => {
+
+    let nameError = "";
+   
+      
+      if (this.refs.companyname.value == ""){
+
+      nameError = "company name is required"
+      console.log(nameError)
+     }
+
+      if (this.refs.companyname.value.trim() === ""){
+
+        nameError = "company name cannot be blank"
+        console.log(nameError)
+       }
+
+       if (this.props.database.map(data=>{if ((data.name).toLowerCase() == this.refs.companyname.value.toLowerCase())
+        nameError = "company already exist in database"
+        console.log(nameError)
+    
+        })) 
+
+        if (nameError){
+
+        this.setState({nameError});
+        return false;
+         }
+         else 
+          this.setState({nameError});
+
+        return true  
+
+        }
+
+    handleSubmit=(e,companyname,address,businesstype,website,companytype,notes,firstcontactname,firstcontactphonenumber,firstcontactemail,secondcontactname,secondcontactphonenumber,secondcontactemail,loanbalance,prepaidexpense,reserve,land,overdraft,investment,provisions,goodwill,debentures,debtors,capital,plant,creditors,preliminaryexpenses,expensespayable,cash,otherloans,stock,customeradvances,suppliersadvance,sales,netprofit)=>{
+    e.preventDefault()  
+
+       const isValid = this.validate()
+       console.log(isValid)
+       if (isValid) {
+         
+         this.props.Addsubmit(e,this.refs.companyname,this.refs.address,this.refs.businesstype,this.refs.website,this.refs.companytype,this.refs.notes,
+          this.refs.firstcontactname,this.refs.firstcontactphonenumber,this.refs.firstcontactemail,this.refs.secondcontactname,this.refs.secondcontactphonenumber,
+          this.refs.secondcontactemail,this.refs.loanbalance,this.refs.prepaidexpense,this.refs.reserve,this.refs.land,this.refs.overdraft,this.refs.investment
+          ,this.refs.provisions,this.refs.goodwill,this.refs.debentures,this.refs.debtors,this.refs.capital,this.refs.plant,this.refs.creditors,this.refs.preliminaryexpenses,
+          this.refs.expensespayable,this.refs.cash,this.refs.otherloans,this.refs.stock,this.refs.customeradvances,this.refs.suppliersadvance,this.refs.sales,this.refs.netprofit)
+       }
+
+  
+
+    }
 
 
-//handleSubmit=(e,companyname,address,businesstype,website,companytype,notes,firstcontactname,firstcontactphonenumber,firstcontactemail,secondcontactname,secondcontactphonenumber,secondcontactemail,loanbalance,prepaidexpense,reserve,land,overdraft,investment,provisions,goodwill,debentures,debtors,capital,plant,creditors,preliminaryexpenses,expensespayable,cash,otherloans,stock,customeradvances,suppliersadvance,sales,netprofit)=>{
-//e.preventDefault()
-//console.log("this is submit")
-//console.log(companyname.value,address.value,businesstype.value,website.value,notes.value,companytype.value,firstcontactname.value,firstcontactphonenumber.value,firstcontactemail.value,secondcontactname.value,secondcontactphonenumber.value,secondcontactemail.value,loanbalance.value,prepaidexpense.value,reserve.value,land.value,overdraft.value,investment.value,provisions.value,goodwill.value,debentures.value,debtors.value,capital.value,plant.value,creditors.value,preliminaryexpenses.value,expensespayable.value,cash.value,otherloans.value,stock.value,customeradvances.value,suppliersadvance.value,sales.value,netprofit.value)
-//}
+
+
+
+
+
 
 
 
 render(){
 return(
 <div>
+
 <button className="positionbackbutton btn green" onClick={this.props.Addclick}>Back</button>
 
 
         <h1 style={{fontcolor:"red"}}>ADD NEW COMPANY INFORMATION</h1> <br></br>
         <br></br>
-    <form onSubmit={(e)=>this.props.Addsubmit(e,this.refs.companyname,this.refs.address,this.refs.businesstype,this.refs.website,this.refs.companytype,this.refs.notes,
+    <form onSubmit={(e)=>this.handleSubmit(e,this.refs.companyname,this.refs.address,this.refs.businesstype,this.refs.website,this.refs.companytype,this.refs.notes,
                                           this.refs.firstcontactname,this.refs.firstcontactphonenumber,this.refs.firstcontactemail,this.refs.secondcontactname,this.refs.secondcontactphonenumber,
                                           this.refs.secondcontactemail,this.refs.loanbalance,this.refs.prepaidexpense,this.refs.reserve,this.refs.land,this.refs.overdraft,this.refs.investment
                                           ,this.refs.provisions,this.refs.goodwill,this.refs.debentures,this.refs.debtors,this.refs.capital,this.refs.plant,this.refs.creditors,this.refs.preliminaryexpenses,
                                           this.refs.expensespayable,this.refs.cash,this.refs.otherloans,this.refs.stock,this.refs.customeradvances,this.refs.suppliersadvance,this.refs.sales,this.refs.netprofit)}>
+    
+    
+    
+    
     <label for="Companyname">Company Name</label>
-    <input type="text" id="Companyname" name="CompanyName" ref="companyname" placeholder="Company name.."/>
-
+    <input type="text" id="Companyname" name="CompanyName" ref="companyname" placeholder="Company name.." required/>
+      <p style={{color:"red", fontWeight:"bold", textTransform:"uppercase"}}>{this.state.nameError}</p> 
     <label for="Address">Company Address</label>
-    <input type="text" id="Address" name="lastname" ref="address" placeholder="Address"/>
+    <input type="text" id="Address" name="lastname" ref="address" placeholder="Address" required/>
 
 
     <label for="BusinessType">Company Business Type</label>
-    <input type="text" id="BusinessType" name="BusinessType" placeholder="Primary Business Type" ref="businesstype"/>
+    <input type="text" id="BusinessType" name="BusinessType" placeholder="Primary Business Type" ref="businesstype" />
 
     <label for="Website">Company Website</label>
     <br></br>
@@ -59,9 +122,9 @@ return(
      <br></br> 
 
     <label for="Contact1">Company Primary Contact Person </label>
-    <input type="text" id="Contact1" name="Contact1" placeholder="ContactName" ref="firstcontactname"/>
+    <input type="text" id="Contact1" name="Contact1" placeholder="ContactName" ref="firstcontactname" required/>
     <label>Phone number </label>
-    <br></br><input style={{width:"400px",height:"35px"}} type="number" id="Contact1" name="Contact1" placeholder="Phone Number" ref="firstcontactphonenumber"/>
+    <br></br><input style={{width:"400px",height:"35px"}} type="number" id="Contact1" name="Contact1" placeholder="Phone Number" ref="firstcontactphonenumber" required/>
     <br></br>
     <label>Email</label>
     <br></br>
@@ -69,9 +132,9 @@ return(
       <br></br>
     <label for="Contact1">Company Secondary Contact Person</label>
   
-    <input type="text" id="Contact2" name="Contact2" placeholder="ContactName" ref="secondcontactname"/>
+    <input type="text" id="Contact2" name="Contact2" placeholder="ContactName" ref="secondcontactname" required/>
     <lable>Phone number </lable> <br></br>
-    <input style={{width:"400px",height:"35px"}} type="number" id="Contact2" name="Contact2" placeholder="Phone Number" ref="secondcontactphonenumber"/>
+    <input style={{width:"400px",height:"35px"}} type="number" id="Contact2" name="Contact2" placeholder="Phone Number" ref="secondcontactphonenumber" required/>
     <br></br>
     <label>Email</label>
     <br></br>
