@@ -446,16 +446,16 @@ class MainContainer extends Component{
 
                    <br></br><br></br>
                   <div className  = "mainbody" style={{fontWeight:"bold", color: 'black',fontSize:34}}>
-                         Name 
+                         
                       <div className="status-head"> 
-                         Status
+                         
                       </div>
 
                   </div>    
 
                     
                            
-               {this.state.data.map(company=><div className="mainposition"><button className="btn purple mainbuttonposition" style={{fontWeight:"bold", color: 'black',fontSize:"15"}} onClick={()=>this.handleclick(company.name)} style={{fontSize: 25,textTransform: "uppercase"}}>{company.name}</button><p className="mainstatusposition" style={{borderWidth:1,fontSize: 25,fontWeight:"bold", color: 'green',}} >{company.status}</p><img className="maindeleteposition2" src="http://www.sclance.com/pngs/x-button-png/./x_button_png_1542725.png" width="50" alt="Delete" onClick={()=>this.handleDelete(company)} ></img> <span className="maindeleteposition">Click X to Delete</span>   <span className="maineditposition">Click Pencil to Edit</span>
+               {this.state.data.map(company=><div className="mainposition"><button className="btn purple mainbuttonposition" style={{fontWeight:"bold", color: 'black',fontSize:"15"}} onClick={()=>this.handleclick(company.name)} style={{fontSize: 25,textTransform: "uppercase"}}>{company.name}</button><p className="mainstatusposition" style={{borderWidth:1,fontSize: 25,fontWeight:"bold", color: 'green',}} >Status --> {company.status}</p><img className="maindeleteposition2" src="http://www.sclance.com/pngs/x-button-png/./x_button_png_1542725.png" width="50" alt="Delete" onClick={()=>this.handleDelete(company)} ></img> <span className="maindeleteposition">Click X to Delete</span>   <span className="maineditposition">Click Pencil to Edit</span>
                 <img className="maineditposition2" src="http://www.sclance.com/pngs/pencil-png-clipart/./pencil_png_clipart_1001619.png" width="50" alt="Edit" onClick={()=>this.handleEdit(company)}></img></div>)}
                          
 
