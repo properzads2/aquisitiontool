@@ -8,7 +8,7 @@ function App() {
     
       <div className = "wrapper">
                 
-                <div align="center" style={{border: '4px solid red',borderRadius: '4', borderWidth: 0.5, fontSize:59, fontWeight:'bold', color:'Green' }} >
+                <div align="center" style={{fontSize:59, fontWeight:'bold', color:'Green' }} >
                    Aquisition Management Tool
                 </div>
 
