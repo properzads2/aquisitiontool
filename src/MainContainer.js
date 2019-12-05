@@ -10,6 +10,8 @@ import Finance from './finance'
 import Status from './Status'
 import Contact from './Contact'
 import Company from './Company'
+import pencil from './pencil.png'
+import x from './x.jpeg'
 
 class MainContainer extends Component{
 
@@ -461,8 +463,8 @@ class MainContainer extends Component{
 
                     
                            
-               {this.state.data.map(company=><div className="mainposition"><button className="btn purple mainbuttonposition" style={{fontWeight:"bold", color: 'black',fontSize:"15"}} onClick={()=>this.handleclick(company.name)} style={{fontSize: 25,textTransform: "uppercase"}}>{company.name}</button><p className="mainstatusposition" style={{borderWidth:1,fontSize: 25,fontWeight:"bold", color: 'green',}} >Status --> {company.status}</p><img className="maindeleteposition2" src="http://www.sclance.com/pngs/x-button-png/./x_button_png_1542725.png" width="50" alt="Delete" onClick={()=>this.handleDelete(company)} ></img> <span className="maindeleteposition">Click X to Delete</span>   <span className="maineditposition">Click Pencil to Edit</span>
-                <img className="maineditposition2" src="http://www.sclance.com/pngs/pencil-png-clipart/./pencil_png_clipart_1001619.png" width="50" alt="Edit" onClick={()=>this.handleEdit(company)}></img></div>)}
+               {this.state.data.map(company=><div className="mainposition"><button className="btn purple mainbuttonposition" style={{fontWeight:"bold", color: 'black',fontSize:"15"}} onClick={()=>this.handleclick(company.name)} style={{fontSize: 25,textTransform: "uppercase"}}>{company.name}</button><p className="mainstatusposition" style={{borderWidth:1,fontSize: 25,fontWeight:"bold", color: 'green',}} >Status --> {company.status}</p><img className="maindeleteposition2" src={x} width="50" alt="Delete" onClick={()=>this.handleDelete(company)} ></img> <span className="maindeleteposition">Click X to Delete</span>   <span className="maineditposition">Click Pencil to Edit</span>
+                <img className="maineditposition2" src={pencil} width="50" alt="Edit" onClick={()=>this.handleEdit(company)}></img></div>)}
                          
 
                 
